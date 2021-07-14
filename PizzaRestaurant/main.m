@@ -25,6 +25,7 @@ int main(int argc, const char * argv[])
         
         BOOL managerToggle = true;
         while (TRUE) {
+            NSLog(@"--------------");
             // Manager
             kitchen.delegate = managerToggle ? cheeryManager : antiAnchovyManager;
             NSLog(@"Manager is %@.", kitchen.delegate);
@@ -50,7 +51,11 @@ int main(int argc, const char * argv[])
             
             // And then send some message to the kitchen...
             Pizza *pizza = [kitchen makePizzaWithSize:size toppings:toppings];
-            NSLog(@"size: %@, toppings: %@", [Pizza transformEnumToStr:[pizza size]], [pizza toppings]);
+            if(pizza == nil) {
+                NSLog(@"Pizza was not cooked.");
+            } else {
+                NSLog(@"Cooked! Size: %@, Toppings: %@", [Pizza transformEnumToStr:[pizza size]], [pizza toppings]);
+            }
         }
 
     }

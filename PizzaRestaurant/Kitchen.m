@@ -18,12 +18,12 @@
 {
     if(![Pizza includesPizzaSize:size]){
         NSLog(@"Invalid size: size should be s/m/l.");
-        return NULL;
+        return nil;
     }
     
     if(![self.delegate kitchen:self shouldMakePizzaOfSize:(PizzaSize) [Pizza transofmrStrToEnum:size] andToppings:toppings]) {
         NSLog(@"Should not make pizza because conditions are not filled.");
-        return NULL;
+        return nil;
     }
     
     PizzaSize _size =
