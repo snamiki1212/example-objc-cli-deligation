@@ -13,8 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DeliveryService : NSObject<ManagerDelegate>
-@property Pizza *pizza;
-- (instancetype)initWithPizza: (Pizza *) pizza;
+@property NSMutableArray<Pizza *> *pizzaList;
 - (void) deliverPizza: (Pizza *) pizza;
 // TODO: The DeliveryService class will also need a method that will return an array of strings that consists of a description of every pizza it has delivered.
 @end

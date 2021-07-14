@@ -11,18 +11,26 @@
 #import "Pizza.h"
 
 @implementation DeliveryService
-
-- (instancetype)initWithPizza: (Pizza *) pizza
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.pizza = pizza;
+        self.pizzaList = [NSMutableArray new];
     }
     return self;
 }
+
 - (void) deliverPizza: (Pizza *) pizza {
+    // deliver
     DeliveryCar *car = [DeliveryCar new];
     [car deliverPizza: pizza];
+    
+    // append
+    [self.pizzaList addObject:pizza];
+    
+    // logging
+    NSLog(@"Deliverd Pizza List: %@", self.pizzaList);
+    
     return;
 }
 
