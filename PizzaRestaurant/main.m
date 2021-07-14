@@ -10,6 +10,7 @@
 
 #import "Kitchen.h"
 #import "AntiAnchovyManager.h"
+#import "CheeryManager.h"
 
 int main(int argc, const char * argv[])
 {
@@ -20,7 +21,12 @@ int main(int argc, const char * argv[])
         
         Kitchen *kitchen = [Kitchen new];
         AntiAnchovyManager *antiAnchovyManager = [AntiAnchovyManager new];
-        kitchen.delegate = antiAnchovyManager;
+        CheeryManager *cheeryManager = [CheeryManager new];
+        
+        // Switch logics
+//        kitchen.delegate = antiAnchovyManager;
+//        // OR
+        kitchen.delegate = cheeryManager;
         
         while (TRUE) {
             // Loop forever
