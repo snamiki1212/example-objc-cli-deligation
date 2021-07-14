@@ -20,23 +20,28 @@
     return self;
 }
 
-- (BOOL)kitchen:(Kitchen *)kitchen shouldMakePizzaOfSize:(id)size andToppings:(NSArray *)toppings {
-    if(size != Small || size != Medium || size != Large){
-        return false;
-    }
-
-    // TODO: valid toppings value?
-    return true;
++ (NSString *) transformEnumToStr: (PizzaSize) size {
+    if(size == Small) return @"small";
+    if(size == Medium) return @"medium";
+    if(size == Large) return @"large";
+    [NSException raise:@"Invalid enum" format:@"pizza size should be s/m/l."];
+    return @"";
 }
 
-- (void)kitchenDidMakePizza:(id)pizza {
-    // TODOO:
-    return;
++ (PizzaSize) transofmrStrToEnum: (NSString *) size {
+    if([size isEqualToString:@"small"]) return Small;
+    if([size isEqualToString:@"medium"]) return Medium;
+    if([size isEqualToString:@"large"]) return Large;
+    [NSException raise:@"Invalid str" format:@"pizza size should be s/m/l."];
+    return Small;
 }
 
-- (BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen {
-    // TODOO:
-    return true;
++ (BOOL) includesPizzaSize: (NSString *) size {
+    if([size isEqualToString:[Pizza transformEnumToStr:Small]]) return true;
+    if([size isEqualToString:[Pizza transformEnumToStr:Medium]]) return true;
+    if([size isEqualToString:[Pizza transformEnumToStr:Large]]) return true;
+    return false;
 }
+
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24353F5C269E4B48008C9880 /* Pizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 24353F5B269E4B48008C9880 /* Pizza.m */; };
 		24353F64269E6104008C9880 /* KitchenDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 24353F63269E6104008C9880 /* KitchenDelegate.h */; };
+		24353F67269E6393008C9880 /* AntiAnchovyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24353F66269E6393008C9880 /* AntiAnchovyManager.m */; };
 		6001EC81197B4EC300F97011 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6001EC80197B4EC300F97011 /* Foundation.framework */; };
 		6001EC84197B4EC300F97011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001EC83197B4EC300F97011 /* main.m */; };
 		6001EC90197B502F00F97011 /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001EC8F197B502F00F97011 /* Kitchen.m */; };
@@ -31,6 +32,8 @@
 		24353F5B269E4B48008C9880 /* Pizza.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pizza.m; sourceTree = "<group>"; };
 		24353F60269E5C77008C9880 /* PizzaSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PizzaSize.h; sourceTree = "<group>"; };
 		24353F63269E6104008C9880 /* KitchenDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KitchenDelegate.h; sourceTree = "<group>"; };
+		24353F65269E6393008C9880 /* AntiAnchovyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntiAnchovyManager.h; sourceTree = "<group>"; };
+		24353F66269E6393008C9880 /* AntiAnchovyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiAnchovyManager.m; sourceTree = "<group>"; };
 		6001EC7D197B4EC300F97011 /* PizzaRestaurant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PizzaRestaurant; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001EC80197B4EC300F97011 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6001EC83197B4EC300F97011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +54,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24353F68269E643A008C9880 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				24353F65269E6393008C9880 /* AntiAnchovyManager.h */,
+				24353F66269E6393008C9880 /* AntiAnchovyManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		24353F69269E643F008C9880 /* Pizza */ = {
+			isa = PBXGroup;
+			children = (
+				24353F60269E5C77008C9880 /* PizzaSize.h */,
+				24353F5A269E4B48008C9880 /* Pizza.h */,
+				24353F5B269E4B48008C9880 /* Pizza.m */,
+			);
+			name = Pizza;
+			sourceTree = "<group>";
+		};
+		24353F6A269E6444008C9880 /* Kitchen */ = {
+			isa = PBXGroup;
+			children = (
+				24353F63269E6104008C9880 /* KitchenDelegate.h */,
+				6001EC8E197B502F00F97011 /* Kitchen.h */,
+				6001EC8F197B502F00F97011 /* Kitchen.m */,
+			);
+			name = Kitchen;
+			sourceTree = "<group>";
+		};
 		6001EC74197B4EC300F97011 = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				6001EC83197B4EC300F97011 /* main.m */,
-				24353F5A269E4B48008C9880 /* Pizza.h */,
-				24353F60269E5C77008C9880 /* PizzaSize.h */,
-				24353F5B269E4B48008C9880 /* Pizza.m */,
-				6001EC8E197B502F00F97011 /* Kitchen.h */,
-				24353F63269E6104008C9880 /* KitchenDelegate.h */,
-				6001EC8F197B502F00F97011 /* Kitchen.m */,
+				24353F68269E643A008C9880 /* Manager */,
+				24353F69269E643F008C9880 /* Pizza */,
+				24353F6A269E6444008C9880 /* Kitchen */,
 				6001EC85197B4EC300F97011 /* Supporting Files */,
 			);
 			path = PizzaRestaurant;
@@ -154,6 +183,7 @@
 				24353F5C269E4B48008C9880 /* Pizza.m in Sources */,
 				24353F64269E6104008C9880 /* KitchenDelegate.h in Sources */,
 				6001EC90197B502F00F97011 /* Kitchen.m in Sources */,
+				24353F67269E6393008C9880 /* AntiAnchovyManager.m in Sources */,
 				6001EC84197B4EC300F97011 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

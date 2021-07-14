@@ -8,23 +8,30 @@
 
 #import "Kitchen.h"
 #import "Pizza.h"
+#import "PizzaSize.h"
 
 @implementation Kitchen
 
-- (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings
+
+
+- (Pizza *)makePizzaWithSize:(NSString *)size toppings:(NSArray *)toppings
 {
-    if([self.delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
-        [NSException raise:@"Error" format:@""];
+    if(![Pizza includesPizzaSize:size]){
+        NSLog(@"Invalid size: size should be s/m/l.");
+        return NULL;
+    }
+    
+    if(![self.delegate kitchen:self shouldMakePizzaOfSize:(PizzaSize) [Pizza transofmrStrToEnum:size] andToppings:toppings]) {
+        NSLog(@"Should not make pizza because conditions are not filled.");
+        return NULL;
     }
     
     PizzaSize _size =
         [self.delegate kitchenShouldUpgradeOrder:self.delegate]
             ? Large
-            : size;
+            : (PizzaSize)size;
     
     Pizza *pizza = [[Pizza alloc] initWith:_size andToppings:toppings];
-    
-    [self.delegate kitchenDidMakePizza:pizza];
     
     return pizza;
 }

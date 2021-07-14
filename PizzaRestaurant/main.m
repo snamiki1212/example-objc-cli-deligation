@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Kitchen.h"
+#import "AntiAnchovyManager.h"
 
 int main(int argc, const char * argv[])
 {
@@ -17,7 +18,9 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Please pick your pizza size and toppings:");
         
-        Kitchen *restaurantKitchen = [Kitchen new];
+        Kitchen *kitchen = [Kitchen new];
+        AntiAnchovyManager *antiAnchovyManager = [AntiAnchovyManager new];
+        kitchen.delegate = antiAnchovyManager;
         
         while (TRUE) {
             // Loop forever
@@ -31,14 +34,16 @@ int main(int argc, const char * argv[])
             
             NSLog(@"Input was %@", inputString);
             
-            // Take the first word of the command as the size, and the rest as the toppings
+            // separate: Take the first word of the command as the size, and the rest as the toppings
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
 
+            // parse
             NSString *size = [commandWords objectAtIndex: 0];
             NSArray *toppings = [commandWords subarrayWithRange: NSMakeRange(1, [commandWords count] - 1 )];
             
             // And then send some message to the kitchen...
-            [restaurantKitchen makePizzaWithSize:size toppings:toppings];
+            Pizza *pizza = [kitchen makePizzaWithSize:size toppings:toppings];
+            NSLog(@"%@", pizza);
         }
 
     }
