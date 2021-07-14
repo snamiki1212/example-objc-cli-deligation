@@ -24,7 +24,7 @@
     if(size == Small) return @"small";
     if(size == Medium) return @"medium";
     if(size == Large) return @"large";
-    [NSException raise:@"Invalid enum" format:@"pizza size should be s/m/l."];
+    NSLog(@"Pizza size should be s/m/l");
     return @"";
 }
 
@@ -33,7 +33,7 @@
     if([size isEqualToString:@"medium"]) return Medium;
     if([size isEqualToString:@"large"]) return Large;
     [NSException raise:@"Invalid str" format:@"pizza size should be s/m/l."];
-    return Small;
+    return NULL;
 }
 
 + (BOOL) includesPizzaSize: (NSString *) size {

@@ -23,18 +23,19 @@ int main(int argc, const char * argv[])
         AntiAnchovyManager *antiAnchovyManager = [AntiAnchovyManager new];
         CheeryManager *cheeryManager = [CheeryManager new];
         
-        // Switch logics
-//        kitchen.delegate = antiAnchovyManager;
-//        // OR
-        kitchen.delegate = cheeryManager;
-        
+        BOOL managerToggle = true;
         while (TRUE) {
-            // Loop forever
+            // Manager
+            kitchen.delegate = managerToggle ? cheeryManager : antiAnchovyManager;
+            NSLog(@"Manager is %@.", kitchen.delegate);
+            managerToggle = !managerToggle;
             
+            // Start cli
             NSLog(@"> ");
             char str[100];
             fgets (str, 100, stdin);
             
+            // trim
             NSString *inputString = [[NSString alloc] initWithUTF8String:str];
             inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
@@ -49,7 +50,7 @@ int main(int argc, const char * argv[])
             
             // And then send some message to the kitchen...
             Pizza *pizza = [kitchen makePizzaWithSize:size toppings:toppings];
-            NSLog(@"%@", pizza);
+            NSLog(@"size: %@, toppings: %@", [Pizza transformEnumToStr:[pizza size]], [pizza toppings]);
         }
 
     }

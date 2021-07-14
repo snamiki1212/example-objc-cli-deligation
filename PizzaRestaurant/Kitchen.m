@@ -29,7 +29,7 @@
     PizzaSize _size =
         [self.delegate kitchenShouldUpgradeOrder:self.delegate]
             ? Large
-            : (PizzaSize)size;
+            : [Pizza transofmrStrToEnum:size];
     
     Pizza *pizza = [[Pizza alloc] initWith:_size andToppings:toppings];
     

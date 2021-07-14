@@ -23,7 +23,6 @@
 }
 
 - (BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen {
-    // TODOO:
     return false;
 }
 @end
