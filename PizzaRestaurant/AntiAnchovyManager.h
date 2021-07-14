@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "Kitchen.h"
+#import "ManagerDelegate.h"
+#import "Pizza.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AntiAnchovyManager : NSObject<KitchenDelegate>
+@property (nonatomic, weak)id<ManagerDelegate> delegate;
+- (void)didMakePizza: (Pizza *) pizza;
 
 // for delegations
 - (BOOL)kitchen:(Kitchen *)kitchen shouldMakePizzaOfSize:(id)size andToppings:(NSArray *)toppings;
-- (void)kitchenDidMakePizza:(id)pizza;
+- (BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen;
+- (void)kitchenDidMakePizza:(Pizza *)pizza;
 @end
 
 NS_ASSUME_NONNULL_END

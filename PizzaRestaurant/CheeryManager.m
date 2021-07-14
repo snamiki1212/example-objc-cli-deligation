@@ -19,4 +19,15 @@
     return YES;
 }
 
+- (void)kitchenDidMakePizza:(Pizza *)pizza {
+    [self didMakePizza:pizza];
+    return;
+}
+
+- (void)didMakePizza: (Pizza *) pizza
+{
+    [self.delegate deliverPizza: pizza];
+    return;
+}
+
 @end

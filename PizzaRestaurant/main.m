@@ -11,6 +11,8 @@
 #import "Kitchen.h"
 #import "AntiAnchovyManager.h"
 #import "CheeryManager.h"
+#import "DeliveryService.h"
+#import "ManagerDelegate.h"
 
 int main(int argc, const char * argv[])
 {
@@ -22,6 +24,9 @@ int main(int argc, const char * argv[])
         Kitchen *kitchen = [Kitchen new];
         AntiAnchovyManager *antiAnchovyManager = [AntiAnchovyManager new];
         CheeryManager *cheeryManager = [CheeryManager new];
+        DeliveryService *deliverService = [DeliveryService new];
+        antiAnchovyManager.delegate = deliverService;
+        cheeryManager.delegate = deliverService;
         
         BOOL managerToggle = true;
         while (TRUE) {
@@ -54,7 +59,9 @@ int main(int argc, const char * argv[])
             if(pizza == nil) {
                 NSLog(@"Pizza was not cooked.");
             } else {
+                
                 NSLog(@"Cooked! Size: %@, Toppings: %@", [Pizza transformEnumToStr:[pizza size]], [pizza toppings]);
+                [kitchen.delegate kitchenDidMakePizza:pizza];
             }
         }
 

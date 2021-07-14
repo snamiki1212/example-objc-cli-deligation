@@ -11,6 +11,9 @@
 		24353F64269E6104008C9880 /* KitchenDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 24353F63269E6104008C9880 /* KitchenDelegate.h */; };
 		24353F67269E6393008C9880 /* AntiAnchovyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24353F66269E6393008C9880 /* AntiAnchovyManager.m */; };
 		24353F6D269E7945008C9880 /* CheeryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24353F6C269E7945008C9880 /* CheeryManager.m */; };
+		24353F70269E803D008C9880 /* DeliveryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 24353F6F269E803D008C9880 /* DeliveryService.m */; };
+		24353F73269E804C008C9880 /* DeliveryCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 24353F72269E804C008C9880 /* DeliveryCar.m */; };
+		24353F76269E83DA008C9880 /* ManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 24353F75269E83DA008C9880 /* ManagerDelegate.h */; };
 		6001EC81197B4EC300F97011 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6001EC80197B4EC300F97011 /* Foundation.framework */; };
 		6001EC84197B4EC300F97011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001EC83197B4EC300F97011 /* main.m */; };
 		6001EC90197B502F00F97011 /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001EC8F197B502F00F97011 /* Kitchen.m */; };
@@ -37,6 +40,11 @@
 		24353F66269E6393008C9880 /* AntiAnchovyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiAnchovyManager.m; sourceTree = "<group>"; };
 		24353F6B269E7945008C9880 /* CheeryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheeryManager.h; sourceTree = "<group>"; };
 		24353F6C269E7945008C9880 /* CheeryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheeryManager.m; sourceTree = "<group>"; };
+		24353F6E269E803D008C9880 /* DeliveryService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeliveryService.h; sourceTree = "<group>"; };
+		24353F6F269E803D008C9880 /* DeliveryService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeliveryService.m; sourceTree = "<group>"; };
+		24353F71269E804C008C9880 /* DeliveryCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeliveryCar.h; sourceTree = "<group>"; };
+		24353F72269E804C008C9880 /* DeliveryCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeliveryCar.m; sourceTree = "<group>"; };
+		24353F75269E83DA008C9880 /* ManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerDelegate.h; sourceTree = "<group>"; };
 		6001EC7D197B4EC300F97011 /* PizzaRestaurant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PizzaRestaurant; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001EC80197B4EC300F97011 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6001EC83197B4EC300F97011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 		24353F68269E643A008C9880 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				24353F75269E83DA008C9880 /* ManagerDelegate.h */,
 				24353F65269E6393008C9880 /* AntiAnchovyManager.h */,
 				24353F66269E6393008C9880 /* AntiAnchovyManager.m */,
 				24353F6B269E7945008C9880 /* CheeryManager.h */,
@@ -86,6 +95,17 @@
 				6001EC8F197B502F00F97011 /* Kitchen.m */,
 			);
 			name = Kitchen;
+			sourceTree = "<group>";
+		};
+		24353F74269E80F7008C9880 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				24353F6E269E803D008C9880 /* DeliveryService.h */,
+				24353F6F269E803D008C9880 /* DeliveryService.m */,
+				24353F71269E804C008C9880 /* DeliveryCar.h */,
+				24353F72269E804C008C9880 /* DeliveryCar.m */,
+			);
+			name = Delivery;
 			sourceTree = "<group>";
 		};
 		6001EC74197B4EC300F97011 = {
@@ -117,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				6001EC83197B4EC300F97011 /* main.m */,
+				24353F74269E80F7008C9880 /* Delivery */,
 				24353F68269E643A008C9880 /* Manager */,
 				24353F69269E643F008C9880 /* Pizza */,
 				24353F6A269E6444008C9880 /* Kitchen */,
@@ -187,7 +208,10 @@
 			files = (
 				24353F5C269E4B48008C9880 /* Pizza.m in Sources */,
 				24353F64269E6104008C9880 /* KitchenDelegate.h in Sources */,
+				24353F73269E804C008C9880 /* DeliveryCar.m in Sources */,
 				6001EC90197B502F00F97011 /* Kitchen.m in Sources */,
+				24353F70269E803D008C9880 /* DeliveryService.m in Sources */,
+				24353F76269E83DA008C9880 /* ManagerDelegate.h in Sources */,
 				24353F6D269E7945008C9880 /* CheeryManager.m in Sources */,
 				24353F67269E6393008C9880 /* AntiAnchovyManager.m in Sources */,
 				6001EC84197B4EC300F97011 /* main.m in Sources */,
